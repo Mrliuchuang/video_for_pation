@@ -6,29 +6,54 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.lc.video_for_pation.MainActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
 
     <Button
+        android:text="在视频取某帧"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="bt" />
+        android:onClick="video_get_zhen" />
 
     <ImageView
         android:id="@+id/image11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@mipmap/ic_launcher"/>
-    <TextView
-        android:id="@+id/path"
-        android:layout_width="match_parent"
-        android:layout_height="100dp" />
+    <Button
+        android:text="本地图片的获取并显示"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="local_picture" />
+    <ImageView
+        android:id="@+id/local_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/ic_launcher"/>
     <VideoView
         android:layout_width="wrap_content"
         android:layout_height="400dp"
         android:id="@+id/videoView" />
     <Button
-        android:text="获取一帧"
+        android:text="获取视频的File路径"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="yizhen" />
-
+        android:onClick="File_path" />
+    <TextView
+        android:id="@+id/path"
+        android:hint="获取的视频路径"
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+</LinearLayout>
+    </ScrollView>
 </LinearLayout>

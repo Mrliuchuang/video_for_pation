@@ -74,6 +74,7 @@ public class Get {
         }
         return null;
     }
+
     /**
      * 171      * @param uri The Uri to check.
      * 172      * @return Whether the Uri authority is ExternalStorageProvider.
@@ -102,7 +103,6 @@ public class Get {
     }
 
 
-
     public String getDataColumn(Context context, Uri uri, String selection,
                                 String[] selectionArgs) {
 
@@ -123,10 +123,21 @@ public class Get {
         }
         return null;
     }
+
     public String getRealPathFromURI(Uri contentUri) {
         String res = null;
         String[] proj = {MediaStore.Images.Media.DATA};
         Cursor cursor = mContext.getContentResolver().query(contentUri, proj, null, null, null);
+        cursor.moveToFirst();
+//                String imgNo = cursor.getString(4); // 图片编号
+//                v_path = cursor.getString(1); // 图片文件路径
+//                String v_size = cursor.getString(2); // 图片大小
+//                String v_name = cursor.getString(3); // 图片文件名
+//                Log.e(":", "v_path=" + v_path);
+//                Log.e(":", "v_size=" + v_size);
+//                Log.e(":", v_name);
+//                Log.e(":", "uri:" + uri);
+//                Log.e(":", "number:" + imgNo);
         if (null != cursor && cursor.moveToFirst()) {
             ;
             int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
